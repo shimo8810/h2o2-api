@@ -1,0 +1,38 @@
+[project]
+name = "h2o2-api"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.121.2",
+    "mangum>=0.19.0",
+    "pwdlib[argon2]>=0.3.0",
+    "pyjwt[crypto]>=2.10.1",
+]
+
+[dependency-groups]
+dev = [
+    "fastapi[standard]>=0.121.2",
+    "ruff>=0.14.5",
+]
+
+[tool.ruff]
+line-length = 80
+indent-width = 4
+
+target-version = "py313"
+
+[tool.ruff.lint]
+select = [
+    "F",   # Pyflakes
+    "E",   # pycodestyle Errors
+    "W",   # pycodestyle Warning
+    "C90", # mccabe
+    "I",   # isort
+    "N",   # pep8-naming
+    "B",   # flake8-bugbear
+    # "ANN", # flake8-annotations
+    "S",   # flake8-bandit
+    "PT",  # flake8-pytest-style
+]
